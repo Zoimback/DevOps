@@ -3,7 +3,8 @@ pipeline{
     stages {
         stage('Build'){
             steps {
-                sh 'Hola'
+                echo 'Hola'
+                sh 'pwd'
             }
         }
     }
