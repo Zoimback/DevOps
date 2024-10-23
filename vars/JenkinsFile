@@ -1,0 +1,10 @@
+pipeline{
+    agent maps
+    stages {
+        stage('Build'){
+            steps {
+                sh 'Hola'
+            }
+        }
+    }
+}
