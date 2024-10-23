@@ -1,0 +1,22 @@
+pipeline {
+    agent any
+    stages {
+        stage('Build Docker Image') {
+            steps {
+                script {
+                        docker.image('python').pull()
+                }
+            }
+        }
+        stage('Run Docker Image') {
+            steps {
+                script {
+                    docker.image('python').run()
+                    def utils = load 'utils.groovy'
+                    utils.someFunction()
+
+                }
+            }
+        }
+    }
+}
