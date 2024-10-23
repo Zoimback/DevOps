@@ -4,14 +4,15 @@ pipeline {
         stage('Build Docker Image') {
             steps {
                 script {
-                        docker.image('python').pull()
+                        docker.image('hello-world').pull()
+                        echo 'hola'
                 }
             }
         }
         stage('Run Docker Image') {
             steps {
                 script {
-                    docker.image('python').run()
+                    docker.image('hello-world').run()
                     def utils = load 'utils.groovy'
                     utils.someFunction()
 
