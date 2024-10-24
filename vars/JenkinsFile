@@ -13,7 +13,7 @@ pipeline {
             steps {
                 script {
                     docker.image('hello-world').run()
-                    def utils = load 'utils.groovy'
+                    def utils = load './vars/utils.groovy'
                     utils.someFunction()
 
                 }
